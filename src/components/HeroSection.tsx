@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { ScreenType } from '../types.ts';
 import {
   Briefcase,
@@ -28,13 +28,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [isMuted, setIsMuted] = useState<boolean>(true);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {
+        // Autoplay may be restricted by browser until user gesture
+        setIsPlaying(false);
+      });
+    }
+  }, []);
+
   const togglePlay = () => {
     if (!videoRef.current) return;
     if (isPlaying) {
       videoRef.current.pause();
       setIsPlaying(false);
     } else {
-      videoRef.current.play();
+      videoRef.current.play().catch(() => {});
       setIsPlaying(true);
     }
   };
@@ -47,12 +57,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#001428] via-[#0f2942] to-[#001428] text-white pt-10 pb-20 border-b border-white/10">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#001428] via-[#0f2942] to-[#001428] text-white pt-6 sm:pt-10 pb-16 sm:pb-20 border-b border-white/10 w-full max-w-full">
       {/* Decorative background radiance */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-[#e85a4f]/15 to-transparent rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-24 right-0 w-96 h-96 bg-[#ffa41b]/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10 w-full max-w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Core Value Proposition */}
@@ -106,24 +116,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Proof Points Strip */}
-            <div className="pt-6 border-t border-white/10 grid grid-cols-3 gap-4 max-w-lg">
+            <div className="pt-6 border-t border-white/10 grid grid-cols-3 gap-2 sm:gap-4 max-w-lg">
               <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-white font-display tabular-nums">
+                <div className="text-xl sm:text-3xl font-extrabold text-white font-display tabular-nums">
                   18,500<span className="text-[#e85a4f]">+</span>
                 </div>
-                <div className="text-xs text-slate-400 mt-0.5">Mobilized Candidates</div>
+                <div className="text-[11px] sm:text-xs text-slate-400 mt-0.5">Mobilized Candidates</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-white font-display tabular-nums">
+                <div className="text-xl sm:text-3xl font-extrabold text-white font-display tabular-nums">
                   99.4<span className="text-[#ffa41b]">%</span>
                 </div>
-                <div className="text-xs text-slate-400 mt-0.5">Visa Approval Rate</div>
+                <div className="text-[11px] sm:text-xs text-slate-400 mt-0.5">Visa Approval Rate</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-white font-display tabular-nums">
+                <div className="text-xl sm:text-3xl font-extrabold text-white font-display tabular-nums">
                   14 <span className="text-emerald-400">Days</span>
                 </div>
-                <div className="text-xs text-slate-400 mt-0.5">Avg Gulf Dispatch</div>
+                <div className="text-[11px] sm:text-xs text-slate-400 mt-0.5">Avg Gulf Dispatch</div>
               </div>
             </div>
 
@@ -170,6 +180,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   <video
                     ref={videoRef}
                     src="/assets/aistudio/Ummeed_Global_Logo_d1cc5535.mp4"
+                    poster="/assets/aistudio/Ummeed_Global_Logo_16c2f50d.png"
                     autoPlay
                     loop
                     muted={isMuted}

@@ -144,8 +144,8 @@ export const EarningVsCostScreen: React.FC<EarningVsCostScreenProps> = ({
   };
 
   return (
-    <div className="bg-[#f7f9fc] min-h-screen py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#f7f9fc] min-h-screen py-6 sm:py-10 w-full max-w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 w-full max-w-full">
         
         {/* Header Hero Banner */}
         <div className="bg-gradient-to-r from-[#001428] via-[#0f2942] to-[#001428] rounded-2xl p-6 sm:p-10 text-white mb-8 border border-white/10 shadow-lg">

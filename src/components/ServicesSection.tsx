@@ -219,7 +219,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             <div className="lg:col-span-5">
               <div className="relative rounded-xl overflow-hidden border border-white/20 shadow-xl aspect-4/3">
                 <img
-                  src="/src/assets/images/hyderabad_headquarters_center_1794081469046.jpg"
+                  src="/assets/images/hyderabad_headquarters_center_1794081469046.jpg"
                   alt="Ummeed Global Resources Hyderabad Headquarters and Executive Testing Briefing Room"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

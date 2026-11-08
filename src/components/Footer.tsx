@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({
               <div className="text-[#ffa41b] font-semibold">
                 Ministry of External Affairs (MEA), India
               </div>
-              <div className="font-mono text-[11px] text-slate-200">
+              <div className="font-mono text-[11px] text-slate-200 break-all">
                 {COMPANY_INFO.registrationNo}
               </div>
               <div className="text-[11px] text-slate-400">
@@ -190,7 +190,7 @@ export const Footer: React.FC<FooterProps> = ({
       </div>
 
       {/* Advisory & Anti-Fraud Legal Strip */}
-      <div className="bg-[#000d1a] py-6 px-4 sm:px-6 lg:px-8 border-t border-white/5 text-slate-400 text-xs">
+      <div className="bg-[#000d1a] py-6 px-4 sm:px-6 lg:px-8 border-t border-white/5 text-slate-400 text-xs w-full max-w-full">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-slate-400 text-center md:text-left">
             <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -198,7 +198,7 @@ export const Footer: React.FC<FooterProps> = ({
               <strong>Public Anti-Fraud Advisory:</strong> Ummeed Global Resources cautions all overseas job aspirants against unauthorized sub-agents. Official transactions are conducted solely at our registered Somajiguda, Hyderabad office.
             </span>
           </div>
-          <div className="text-[11px] text-slate-500 whitespace-nowrap">
+          <div className="text-[11px] text-slate-500 text-center md:text-right">
             © {new Date().getFullYear()} Ummeed Global Resources. All rights reserved.
           </div>
         </div>

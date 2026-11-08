@@ -44,7 +44,7 @@ export const TrustCompliance: React.FC = () => {
                     <FileCheck className="w-4 h-4 text-[#e85a4f]" />
                     <span>MEA Registration Number</span>
                   </div>
-                  <div className="font-mono text-slate-700 font-semibold">
+                  <div className="font-mono text-slate-700 font-semibold break-all">
                     B-1044/TEL/COM/1000+/5/9822/2021
                   </div>
                   <div className="text-slate-500 text-[11px] mt-0.5">
@@ -94,7 +94,7 @@ export const TrustCompliance: React.FC = () => {
             <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between">
               <div className="h-64 sm:h-72 w-full relative">
                 <img
-                  src="/src/assets/images/global_workforce_deployment_1794081469392.jpg"
+                  src="/assets/images/global_workforce_deployment_1794081469392.jpg"
                   alt="Ummeed Mobilized Overseas Professionals at International Hub"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -121,7 +121,7 @@ export const TrustCompliance: React.FC = () => {
             <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between">
               <div className="h-64 sm:h-72 w-full relative">
                 <img
-                  src="/src/assets/images/overseas_recruitment_consulting_1794081469369.jpg"
+                  src="/assets/images/overseas_recruitment_consulting_1794081469369.jpg"
                   alt="Ummeed International Corporate Recruitment Briefing in Hyderabad"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

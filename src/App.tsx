@@ -68,7 +68,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f7f9fc] text-[#191c1e] selection:bg-[#fc695d] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#f7f9fc] text-[#191c1e] selection:bg-[#fc695d] selection:text-white w-full max-w-full overflow-x-hidden">
       {/* Top Header */}
       <Header
         activeScreen={activeScreen}
@@ -79,7 +79,7 @@ export default function App() {
 
       {/* Screen 1: Vibrant Global Overseas Recruitment (Initial Screen) */}
       {activeScreen === 'home' && (
-        <main className="flex-1">
+        <main className="flex-1 w-full max-w-full overflow-x-hidden">
           {/* Hero Section with Animated Video Stage */}
           <HeroSection
             onNavigate={handleNavigate}
@@ -106,7 +106,7 @@ export default function App() {
 
       {/* Screen 2: International Job Openings */}
       {activeScreen === 'jobs' && (
-        <main className="flex-1">
+        <main className="flex-1 w-full max-w-full overflow-x-hidden">
           <JobBoardScreen
             initialCountryFilter={initialCountryFilter}
             onApplyForJob={handleApplyForJob}
@@ -117,7 +117,7 @@ export default function App() {
 
       {/* Screen 3: Real-World Earning Potential vs. True Cost of Living */}
       {activeScreen === 'calculator' && (
-        <main className="flex-1">
+        <main className="flex-1 w-full max-w-full overflow-x-hidden">
           <EarningVsCostScreen
             onNavigateToJobsWithCountry={handleNavigateToJobsWithCountry}
             onOpenConsultationModal={handleOpenGeneralApplication}

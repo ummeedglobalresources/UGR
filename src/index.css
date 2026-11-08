@@ -15,6 +15,18 @@
   --color-surface-bg: #f7f9fc;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+#root {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: #f7f9fc;

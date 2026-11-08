@@ -67,8 +67,8 @@ export const JobBoardScreen: React.FC<JobBoardScreenProps> = ({
   }, [searchQuery, selectedCountry, selectedSector, selectedStream]);
 
   return (
-    <div className="bg-[#f7f9fc] min-h-screen py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#f7f9fc] min-h-screen py-6 sm:py-10 w-full max-w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 w-full max-w-full">
         
         {/* Screen Header */}
         <div className="bg-gradient-to-r from-[#001428] via-[#0f2942] to-[#001428] rounded-2xl p-6 sm:p-10 text-white mb-8 border border-white/10 shadow-lg">
@@ -218,11 +218,11 @@ export const JobBoardScreen: React.FC<JobBoardScreenProps> = ({
             {filteredJobs.map((job) => (
               <div
                 key={job.id}
-                className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover:border-[#0f2942] hover:shadow-lg transition-all relative group"
+                className="bg-white rounded-xl border border-slate-200 p-4 sm:p-6 flex flex-col justify-between hover:border-[#0f2942] hover:shadow-lg transition-all relative group"
               >
                 {/* Urgent indicator if applicable */}
                 {job.urgentHiring && (
-                  <div className="absolute top-4 right-4 flex items-center gap-1 text-[11px] font-bold text-[#ae302a] bg-red-50 border border-red-200 px-2.5 py-0.5 rounded-full">
+                  <div className="sm:absolute sm:top-4 sm:right-4 inline-flex items-center gap-1 text-[11px] font-bold text-[#ae302a] bg-red-50 border border-red-200 px-2.5 py-0.5 rounded-full mb-2 sm:mb-0 w-fit self-start sm:self-auto">
                     <Flame className="w-3.5 h-3.5 text-[#e85a4f]" />
                     <span>Urgent Deployment</span>
                   </div>
@@ -230,7 +230,7 @@ export const JobBoardScreen: React.FC<JobBoardScreenProps> = ({
 
                 <div>
                   {/* Country Flag & Reference */}
-                  <div className="flex items-center gap-2 text-xs text-slate-500 mb-2 font-mono">
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500 mb-2 font-mono">
                     <span className="text-lg">{job.flag}</span>
                     <span className="font-bold text-[#001428] font-sans">{job.country}</span>
                     <span aria-hidden="true">·</span>
@@ -240,7 +240,7 @@ export const JobBoardScreen: React.FC<JobBoardScreenProps> = ({
                   </div>
 
                   {/* Title */}
-                  <h2 className="text-lg sm:text-xl font-bold text-[#001428] font-display group-hover:text-[#e85a4f] transition-colors mb-1 pr-24">
+                  <h2 className="text-base sm:text-xl font-bold text-[#001428] font-display group-hover:text-[#e85a4f] transition-colors mb-1 pr-0 sm:pr-24 break-words">
                     {job.title}
                   </h2>
 
